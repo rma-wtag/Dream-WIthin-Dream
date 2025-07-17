@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dream-Within-Dream")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a93c1d5171524d1b2a5a20fa9cbe84b0c354b4cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+857ea53e70cec18a697f0da1bee7be4d1ed9ff25")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dream-Within-Dream")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dream-Within-Dream")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

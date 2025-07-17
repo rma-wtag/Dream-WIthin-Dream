@@ -22,15 +22,11 @@ namespace Dream_Within_Dream.Populator
 
         public List<Dream> GenerateDreams(int maxDreams = 1000) {
 
-            Console.WriteLine("Populating Dream....");
-            //Thread.Sleep(2000);
-
             totalDreams = maxDreams;
             var rootDreams = new List<Dream>();
             while (dreamsCreated < totalDreams) {
                 rootDreams.Add(CreateDreams(0));
             }
-            Console.WriteLine("Dream Population finished!");
             return rootDreams;
         }
 
