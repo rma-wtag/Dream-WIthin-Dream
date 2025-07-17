@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Mahin\\TSE Learning\\Projects\\Dream-Within-Dream\\Dream-Within-Dream\\Dream-Within-Dream.csproj": {}
+    "C:\\Mahin\\TSE Learning\\Projects\\Dream-WIthin-Dream\\Dream-Within-Dream\\Dream-Within-Dream.csproj": {}
   },
   "projects": {
-    "C:\\Mahin\\TSE Learning\\Projects\\Dream-Within-Dream\\Dream-Within-Dream\\Dream-Within-Dream.csproj": {
+    "C:\\Mahin\\TSE Learning\\Projects\\Dream-WIthin-Dream\\Dream-Within-Dream\\Dream-Within-Dream.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Mahin\\TSE Learning\\Projects\\Dream-Within-Dream\\Dream-Within-Dream\\Dream-Within-Dream.csproj",
+        "projectUniqueName": "C:\\Mahin\\TSE Learning\\Projects\\Dream-WIthin-Dream\\Dream-Within-Dream\\Dream-Within-Dream.csproj",
         "projectName": "Dream-Within-Dream",
-        "projectPath": "C:\\Mahin\\TSE Learning\\Projects\\Dream-Within-Dream\\Dream-Within-Dream\\Dream-Within-Dream.csproj",
+        "projectPath": "C:\\Mahin\\TSE Learning\\Projects\\Dream-WIthin-Dream\\Dream-Within-Dream\\Dream-Within-Dream.csproj",
         "packagesPath": "C:\\Users\\Mahin\\.nuget\\packages\\",
-        "outputPath": "C:\\Mahin\\TSE Learning\\Projects\\Dream-Within-Dream\\Dream-Within-Dream\\obj\\",
+        "outputPath": "C:\\Mahin\\TSE Learning\\Projects\\Dream-WIthin-Dream\\Dream-Within-Dream\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
