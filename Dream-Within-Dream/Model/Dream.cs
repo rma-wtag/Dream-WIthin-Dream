@@ -13,5 +13,10 @@ namespace Dream_Within_Dream.Model
         public string? Description { get; set; }
         public int Level { get; set; }
         public List<Dream>? InnerDreams { get; set; }
+
+        public override string ToString()
+        {
+            return $"Id : {Id} , Dreamer: {Dreamer} ,Description: {Description} ,Level: {Level} ,Subdreams: {InnerDreams?.Count}";
+        }
     }
 }

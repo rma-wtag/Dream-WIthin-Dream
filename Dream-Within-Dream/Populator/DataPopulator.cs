@@ -18,7 +18,13 @@ namespace Dream_Within_Dream.Populator
         static int dreamsCreated = 0;
         static int currentId = 1;
         static int totalDreams { get; set; } = 1000;
-        
+
+        public DataPopulator()
+        {
+            Console.WriteLine("Populating Dreams....");
+            Console.WriteLine("Populating Finished!");
+            Console.WriteLine();
+        }
 
         public List<Dream> GenerateDreams(int maxDreams = 1000) {
 
