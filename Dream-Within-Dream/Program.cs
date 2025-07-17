@@ -1,6 +1,7 @@
 ﻿using Dream_Within_Dream.Actions;
 using Dream_Within_Dream.Model;
 using Dream_Within_Dream.Populator;
+using Dream_Within_Dream.TicketBooking;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -18,29 +19,56 @@ public class Program {
         
         DataPopulator populator = new DataPopulator();
         var generateDreams = Task.Run(() => populator.GenerateDreams(1000000));
+        DreamQueries dreamQueries = null;
+        bool endProgram = false;
 
-        Console.WriteLine("1.Get all dreams");
-        Console.WriteLine("2.Get dreams by ID");
-        Console.WriteLine("3.Book ticket for dreams");
-        Console.Write("Enter which operation you want to perform : ");
-        int.TryParse(Console.ReadLine(), out int queryInt);
+        while (true) {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Here are the operations you can perform : \n");
+            Console.ResetColor();
 
-        List<Dream> dreams = await generateDreams;
-        DreamQueries dreamQueries = new DreamQueries(dreams);
+            Console.WriteLine("0.To exit from the program");
+            Console.WriteLine("1.Get all dreams");
+            Console.WriteLine("2.Get dreams by ID");
+            Console.WriteLine("3.Book ticket by dream levels");
+            Console.Write("Enter which operation you want to perform : ");
+            int.TryParse(Console.ReadLine(), out int queryInt);
 
-        switch (queryInt) {
-            case 1:
-                handleGetAllData(dreamQueries);
+            if (dreamQueries == null)
+            {
+                List<Dream> dreams = await generateDreams;
+                dreamQueries = new DreamQueries(dreams);
+            }
+
+            switch (queryInt)
+            {
+                case 0:
+                    endProgram = true;
+                    break;
+                case 1:
+                    handleGetAllData(dreamQueries);
+                    break;
+                case 2:
+                    await handleGetDataById(dreamQueries);
+                    break;
+                case 3:
+                    await handleTicketBookingByLevel(dreamQueries);
+                    break;
+                default:
+                    Console.WriteLine("Sorry, it is not a defined operation");
+                    break;
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            if (endProgram) {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Thank You for using our app!");
+                Console.ResetColor();
                 break;
-            case 2:
-                await handleGetDataById(dreamQueries);
-                break;
-            default:
-                Console.WriteLine("Sorry, it is not a defined operation");
-                break;
+            }
         }
-
-        Console.ReadKey();
     }
 
     private static async Task handleGetDataById(DreamQueries dreamQueries)
@@ -111,6 +139,15 @@ public class Program {
                 break;
             }
         }
+    }
+    private static async Task handleTicketBookingByLevel(DreamQueries dreamQueries) {
+        var ticketService = new TicketService(100);
+        var tickerBooker = new TicketBooker(dreamQueries.DreamList, ticketService);
+
+        Console.Write("Enter for which Level you want to book ticket : ");
+        int.TryParse(Console.ReadLine(), out int level);
+
+        await tickerBooker.BookTicketsAtLevelAsync(level);
     }
 
 }
